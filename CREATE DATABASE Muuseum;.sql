@@ -51,3 +51,6 @@ VALUES (1, 'Saal1', 1);
 
 INSERT INTO Eksponaadid
 VALUES (1, 'Nimetus1', 1, '2023-12-22 18:56:22', 'autor1', 'materjal1', 'kunstiliik1', 99999.99);
+
+CREATE USER 'urm1'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON Muuseum.* TO 'urm1'@'localhost';
