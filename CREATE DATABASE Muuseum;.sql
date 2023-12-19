@@ -1,5 +1,13 @@
 CREATE DATABASE IF NOT EXISTS Muuseum;
 USE Muuseum;
+CREATE TABLE IF NOT EXISTS Töötajad
+(
+    Töötaja_ID integer NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Töötaja_ID),
+    Nimi       varchar(30),
+    Amet       varchar(30),
+    Palk       decimal(5, 2)
+);
 CREATE TABLE IF NOT EXISTS Ekskursioonid
 (
     Ekskursiooni_Kood integer NOT NULL AUTO_INCREMENT,
@@ -9,14 +17,6 @@ CREATE TABLE IF NOT EXISTS Ekskursioonid
     Vastutaja         integer,
     FOREIGN KEY (Vastutaja) REFERENCES Töötajad (Töötaja_ID),
     Hind              decimal(3, 2)
-);
-CREATE TABLE IF NOT EXISTS Töötajad
-(
-    Töötaja_ID integer NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY (Töötaja_ID),
-    Nimi       varchar(30),
-    Amet       varchar(30),
-    Palk       decimal(5, 2)
 );
 CREATE TABLE IF NOT EXISTS Saalid
 (
