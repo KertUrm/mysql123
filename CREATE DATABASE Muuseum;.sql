@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS Eksponaadid
 );
 
 INSERT INTO Töötajad
-VALUES (1, 'Nimi1', 'Amet1', 1000.56);
+VALUES (1, 'Nimi1', 'Amet1', 100.6);
 
 INSERT INTO Ekskursioonid
 VALUES (1, '2003-12-12 08:55:12', 'Teema1', 1, 8.37);
