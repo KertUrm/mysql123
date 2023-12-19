@@ -1,6 +1,6 @@
-CREATE DATABASE Muuseum;
+CREATE DATABASE [IF NOT EXISTS] Muuseum;
 USE Muuseum;
-CREATE TABLE Ekskursioonid
+CREATE TABLE [IF NOT EXISTS] Ekskursioonid
 (
     Ekskursiooni_Kood integer NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Ekskursiooni_Kood),
@@ -10,7 +10,7 @@ CREATE TABLE Ekskursioonid
     FOREIGN KEY (Vastutaja) REFERENCES Töötajad (Töötaja_ID),
     Hind              decimal(3, 2)
 );
-CREATE TABLE Töötajad
+CREATE TABLE [IF NOT EXISTS] Töötajad
 (
     Töötaja_ID integer NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Töötaja_ID),
@@ -18,7 +18,7 @@ CREATE TABLE Töötajad
     Amet       varchar(30),
     Palk       decimal(5, 2)
 );
-CREATE TABLE Saalid
+CREATE TABLE [IF NOT EXISTS] Saalid
 (
     Saali_kood    integer NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Saali_kood),
@@ -26,7 +26,7 @@ CREATE TABLE Saalid
     Vastutaja     integer,
     FOREIGN KEY (Vastutaja) REFERENCES Töötajad (Töötaja_ID)
 );
-CREATE TABLE Eksponaadid
+CREATE TABLE [IF NOT EXISTS] Eksponaadid
 (
     Eksponaadi_kood       integer NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Eksponaadi_kood),
