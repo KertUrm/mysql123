@@ -15,14 +15,14 @@ CREATE TABLE Product(
     Name VARCHAR(30),
     idCategory INT,
     FOREIGN KEY(idCategory) REFERENCES Category(idCategory),
-    Price DECIMAL(10, 2)
+    Price DECIMAL(10, 2) DEFAULT 54.2
 );
 CREATE TABLE Sale(
     idSale INT NOT NULL,
     PRIMARY KEY(idSale),
     idProduct INT,
     FOREIGN KEY(idProduct) REFERENCES Product(idProduct),
-    idCustomer INT,
+    idCustomer INT UNIQUE,
     Count_pr INT,
     Date_of_sale DATE
 );
@@ -36,8 +36,6 @@ ALTER TABLE Category
 MODIFY COLUMN Category_Name VARCHAR(50);
 ALTER TABLE Sale
 ADD COLUMN Unit VARCHAR(10);
-ALTER TABLE Sale
-MODIFY idSale INT;
 ALTER TABLE Sale DROP FOREIGN KEY Sale_ibfk_1;
 CREATE USER IF NOT EXISTS 'usr1' @'localhost' IDENTIFIED BY '123';
 GRANT ALL PRIVILEGES ON data1.* TO 'usr1' @'localhost';
